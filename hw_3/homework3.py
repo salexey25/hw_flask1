@@ -1,10 +1,7 @@
-"""task3"""
-
 from flask import Flask, render_template, request
 from hw_3.models import db, User
 from flask_wtf.csrf import CSRFProtect
 from hw_3.form import RegistrationForm
-
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
