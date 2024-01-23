@@ -21,7 +21,7 @@ def create():
 @app.route('/register/', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
-    if request.method == 'POST' and form.validate():
+    if form.validate_on_submit():
         firstname = form.firstname.data
         user = User(firstname = form.firstname.data,
                     lastname = form.lastname.data,
