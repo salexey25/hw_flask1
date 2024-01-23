@@ -1,4 +1,3 @@
-idea/dbnavigator.xml
 .idea/hw_flask1.iml
 .idea/inspectionProfiles/
 .idea/misc.xml
@@ -6,4 +5,3 @@ idea/dbnavigator.xml
 .idea/vcs.xml
 .venv/
 instance/
-.idea/dbnavigator.xml
