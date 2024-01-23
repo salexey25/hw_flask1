@@ -4,6 +4,7 @@ from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 import pandas as pd
 
+
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 tasks = []
@@ -14,10 +15,12 @@ class Task(BaseModel):
     description: str
     status: str
 
+
 @app.get("/tasks/", response_class=HTMLResponse)
 async def show_task(request: Request):
     table = pd.DataFrame([vars(task) for task in tasks]).to_html()
     return templates.TemplateResponse("task.html", {"request": request, "table": table})
+
 
 @app.get("/tasks/{id}")
 async def read_task(request: Request, id: int):
